@@ -1,0 +1,48 @@
+This is the newer version of flowerpower.  Arguments are:
+
+flowerpower.pl 
+Arguments
+  -i            Source sequence filename if starting from seed.
+  -a            Alignment file if starting from MSA.
+  -n            Number of SHMMs iterations (default: 3).
+  --psiiters    Number of PSIBLAST iterations (default: 3).
+  --npsihits    Number of PSIBLAST hits returned per iteration
+  --psievalue   E-value threshold to use in PSIBLAST run (default: 10).
+  --fpmaxevalue E-value threshold to use in SHMMs run (default: depends on seed
+                length: < 65: 1e-2; <= 100: 1e-3; > 100: 1e-4).
+  --fphits      Number of FlowerPower hits to return (default: 1000).
+  -d            Database (default: UniProt).
+  -u            Universe for flowerpower run (default: will be created by
+                running PSIBLAST).
+  -s            sw option to use for assign_seqs (default: 2).
+  -p            Pwid (default: 0.20).
+  --cov         Coverage parameter (default: 0).  If set to 1 less stringent
+                parameter will be used; values 2-4 user progressively less stringent values.
+  --qcov        Query coverage parameter (default: 0).  Use a fractional setting
+                such as 0.65 to override the coverage based on seed length.
+  --hcov        Hit coverage parameter (default: 0).  Use a fractional setting
+                such as 0.65 to override coverage based on hit length. This
+                works only for global option.  Hit coverage is not calculated
+                for glocal option.
+  --mode        Alignment mode (default: global).  Options: global or glocal.
+                If set to glocal: align global to HMM and local to hit.
+  --speed       slow or fast (default: fast).  Fast reduces universe size at
+                each iteration by removing sequences with e-value > 100).
+  --tempcheck   1: use current directory for temporary files (default: 0 - use 
+                /tmp)
+  --verbose     1: print verbose messages (default: 0).
+  --seedmaster  1: keep master-slave alignment with seed as master (default: 1).
+  --pfam        1: do not trim the MSA or realign with MUSCLE (default: 0).
+  --blast_again 1: run BLAST on supplied universe to get e-values (default: 1).
+  --max_insert  Maximum number of contiguous inserts allowed (default: 40).
+  --max_gap     Maximum number of contigous gaps allowed (default: 40).
+  --use_bins    Whether to use the database binned by length
+  --bin_width   Width of the range of sequence lengths to put in one bin
+  --longest_bin Length for which longer sequences all go in the last bin
+  --no_output_log 1: print logging information to the screen rather than file (default: 0).
+  --msa_profile 1: use the input MSA to build an initial profile (default 0).
+  --initial_percent_id Percent id cutoff for initial homolog set (default: 0.3)
+  --initial_max_insert Largest insert allowable for initial homolog set (default 30)
+  --initial_max_gap Largest deletion allowable for initial homolog set (default 30)
+  --initial_min_coverage Coverage criterion for initial homolog set (default 0, stringent)
+                         use 1-4 for less stringent initial inclusion coverage.
